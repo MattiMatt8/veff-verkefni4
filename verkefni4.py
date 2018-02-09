@@ -14,19 +14,17 @@ def nemandi(kt):
         if nemandi['kt'] == kt:
             return template('v4/nemandi',nemandi)
     else:
-        return fannstEkki()
-def fannstEkki():
-    return '''
-    <h2>Nemandi fannst ekki</h2>
-    <a href="/">Til Baka</a>
-    '''
+        return '''
+            <h2>Nemandi fannst ekki</h2>
+            <a href="/">Til Baka</a>
+            '''
 
 @route('/css/<skjal>')
 def server_static(skjal):
     return static_file(skjal, root='./v4/css')
 
 @error(404)
-def villa404():
+def villa404(error):
     return '''
     <h2>Error 404</h2>
     <h3>Síða finnst ekki</h3>
@@ -34,7 +32,7 @@ def villa404():
     '''
 
 @error(500)
-def villa500():
+def villa500(error):
     return '''
     <h2>Error 500</h2>
     <h3>Villa í forritinu</h3>
