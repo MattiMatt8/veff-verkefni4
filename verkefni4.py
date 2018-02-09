@@ -41,5 +41,4 @@ def villa500():
     <a href="/">Til Baka</a>
     '''
 
-#run(host="0.0.0.0", port=os.environ.get('PORT'))
-run()
+run(host="0.0.0.0", port=os.environ.get('PORT'))
